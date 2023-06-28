@@ -8,13 +8,13 @@ use App\Models\Perro;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Log;
 use Spatie\FlareClient\Http\Response as HttpResponse;
-use App\Http\Requests\perroRequest;
+use App\Http\Requests\PerroRequest;
 
 use Exception;
 
 class PerroController extends Controller
 {
-    public function createPerro (perroRequest $request){
+    public function createPerro (PerroRequest $request){
         try {
             $perro = new Perro();
             $perro->name = $request->name;
@@ -31,7 +31,7 @@ class PerroController extends Controller
     }
 
 
-    public function viewPerro (perroRequest $request){
+    public function viewPerro (PerroRequest $request){
         try {
             $perro = Perro::find($request->id);
             return response()->json([
@@ -43,7 +43,7 @@ class PerroController extends Controller
         }
     }
 
-    public function getallPerros (perroRequest $request){
+    public function getallPerros (PerroRequest $request){
         try {
             $perros = Perro::all();
             return response()->json([
@@ -55,7 +55,7 @@ class PerroController extends Controller
         }
     }
 
-    public function updatePerro (perroRequest $request){
+    public function updatePerro (PerroRequest $request){
         try {
             $perro = Perro::find($request->id);
             $perro->name = $request->name;
@@ -71,7 +71,7 @@ class PerroController extends Controller
         }
     }
 
-    public function deletePerro (perroRequest $request){
+    public function deletePerro (PerroRequest $request){
         try {
             $perro = Perro::find($request->id);
             $perro->delete();
