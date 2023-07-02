@@ -8,7 +8,7 @@ use Illuminate\Http\Exceptions\HttpResponseException;
 use Illuminate\Contracts\Validation\Validator;
 
 
-class InteraccionRequest extends FormRequest
+class interaccionRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -26,8 +26,8 @@ class InteraccionRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'Perro_interesado_id' => 'required|integer',
-            'Perro_candidato_id' => 'required|integer',
+            'perro_interesado_id' => 'required|integer',
+            'perro_candidato_id' => 'required|integer',
             'preferencia' => 'required|string|alpha',
         ];
     }
@@ -36,10 +36,10 @@ class InteraccionRequest extends FormRequest
     public function messages()
     {
     return[
-        'Perro_interesado_id.required' => 'La id del perro interesado es obligatoria',
-        'Perro_interesado_id.integer' => 'La id del perro interesado debe ser un entero',
-        'Perro_candidato_id.required' => 'La id del perro candidato es obligatoria',
-        'Perro_candidato_id.integer' => 'La id del perro candidato debe ser un entero',
+        'perro_interesado_id.required' => 'La id del perro interesado es obligatoria',
+        'perro_interesado_id.integer' => 'La id del perro interesado debe ser un entero',
+        'perro_candidato_id.required' => 'La id del perro candidato es obligatoria',
+        'perro_candidato_id.integer' => 'La id del perro candidato debe ser un entero',
         'preferencia.required' => 'La "Preferencia" es obligatoria',
         'preferencia.string' => 'La preferencia debe ser un string',
         'preferencia.alpha' => 'La preferencia debe ser un string alfabético [A-Z]]',

@@ -17,7 +17,6 @@ return new class extends Migration
             $table->foreignId('perro_interesado_id')->constrained('perros');
             $table->foreignId('perro_candidato_id')->constrained('perros');
             $table->string('preferencia');
-            $table->date('creado_el');
         });
     }
 

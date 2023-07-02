@@ -8,13 +8,13 @@ use App\Models\Perro;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Log;
 use Spatie\FlareClient\Http\Response as HttpResponse;
-use App\Http\Requests\PerroRequest;
+use App\Http\Requests\perroRequest;
 
 use Exception;
 
 class PerroController extends Controller
 {
-    public function createPerro (PerroRequest $request){
+    public function createPerro (perroRequest $request){
         try {
             $perro = new Perro();
             $perro->name = $request->name;
@@ -31,7 +31,7 @@ class PerroController extends Controller
     }
 
 
-    public function viewPerro (PerroRequest $request){
+    public function getOnePerro (Request $request){
         try {
             $perro = Perro::find($request->id);
             return response()->json([
@@ -43,7 +43,7 @@ class PerroController extends Controller
         }
     }
 
-    public function getallPerros (PerroRequest $request){
+    public function getallPerros (Request $request){
         try {
             $perros = Perro::all();
             return response()->json([
@@ -55,7 +55,7 @@ class PerroController extends Controller
         }
     }
 
-    public function updatePerro (PerroRequest $request){
+    public function updatePerro (Request $request){
         try {
             $perro = Perro::find($request->id);
             $perro->name = $request->name;
@@ -66,12 +66,10 @@ class PerroController extends Controller
                 'message' => 'Perro actualizado correctamente',
                 'error' => $perro ], Response::HTTP_OK);
         } catch (Exception $e) {
-            Log::error($e->getMessage());
-            return response()->json(['message' => 'Error al actualizar el perro'], Response::HTTP_BAD_REQUEST);
+            return response()->json(["error"=>$e->getMessage()], Response::HTTP_BAD_REQUEST);
         }
     }
-
-    public function deletePerro (PerroRequest $request){
+    public function deletePerro (Request $request){
         try {
             $perro = Perro::find($request->id);
             $perro->delete();
@@ -79,8 +77,7 @@ class PerroController extends Controller
                 'message' => 'Perro eliminado correctamente',
                 'error' => $perro ], Response::HTTP_OK);
         } catch (Exception $e) {
-            Log::error($e->getMessage());
-            return response()->json(['message' => 'Error al eliminar el perro'], Response::HTTP_BAD_REQUEST);
+            return response()->json(["error"=>$e->getMessage()], Response::HTTP_BAD_REQUEST);
         }
     }
 

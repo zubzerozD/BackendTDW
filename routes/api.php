@@ -22,7 +22,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::prefix("perro")->group(function () {
     Route::post("create", "App\Http\Controllers\PerroController@createPerro");
-    Route::get("view", "App\Http\Controllers\PerroController@viewPerro");
+    Route::get("getone", "App\Http\Controllers\PerroController@getOnePerro");
     Route::get("getall", "App\Http\Controllers\PerroController@getallPerros");
     Route::put("update", "App\Http\Controllers\PerroController@updatePerro");
     Route::delete("delete", "App\Http\Controllers\PerroController@deletePerro");
