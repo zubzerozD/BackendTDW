@@ -43,7 +43,7 @@ descripcion)
 - sin body
 
 ### para ver un perro con Get
-- http://127.0.0.1:8000/api/perro/getall
+- http://127.0.0.1:8000/api/perro/getone
 - ejemplo de body
 ```
 {
