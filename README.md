@@ -29,7 +29,7 @@ descripcion)
 
 ### para crear un perro con Post
 - http://127.0.0.1:8000/api/perro/create
-- ejemplo de body
+- ejemplo de body JSON
 ```
 {
     "name": "perro1",
@@ -44,7 +44,7 @@ descripcion)
 
 ### para ver un perro con Get
 - http://127.0.0.1:8000/api/perro/getone
-- ejemplo de body
+- ejemplo de body JSON
 ```
 {
     "id": 1
@@ -53,7 +53,7 @@ descripcion)
 
 ### para actualizar un perro con Put
 - http://127.0.0.1:8000/api/perro/update
-- ejemplo de body
+- ejemplo de body JSON
 ```
 {
     "id": 1,
@@ -65,7 +65,7 @@ descripcion)
 
 ### para eliminar un perro con Delete
 - http://127.0.0.1:8000/api/perro/delete
-- ejemplo de body
+- ejemplo de body JSON
 ```
 {
     "id": 1
@@ -74,7 +74,7 @@ descripcion)
 
 ### para crear una interaccion con Post
 - http://127.0.0.1:8000/api/interaccion/create
-- ejemplo de body
+- ejemplo de body JSON
 ```
 {
     "id_perro_interesado": 1,
@@ -89,7 +89,7 @@ descripcion)
 
 ### para eliminar una interaccion con Delete
 - http://127.0.0.1:8000/api/interaccion/delete
-- ejemplo de body
+- ejemplo de body JSON
 ```
 {
     "id": 1
@@ -98,7 +98,7 @@ descripcion)
 
 ### para actualizar una interaccion con Put
 - http://127.0.0.1:8000/api/interaccion/update
-- ejemplo de body
+- ejemplo de body JSON
 ```
 {
     "id": 1,
